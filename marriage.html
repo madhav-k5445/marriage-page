@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>కాండ్రేగుల దివ్య తేజస్వి - వివాహ బయోడాటా</title>
+    <style>
+        /* Global styles */
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            background: url('https://i.pinimg.com/originals/e7/dd/39/e7dd3948839cdfab04f64909dc4484d2.jpg') no-repeat center center fixed;
+            background-size: cover;
+            color: white;
+            overflow-x: hidden;
+        }
+
+        /* Hero section styles */
+        .hero {
+            text-align: center;
+            padding: 15px 20px;
+        }
+
+        .ganesha-logo {
+            width: 100px;
+            margin-bottom: 5px;
+            filter: invert(100%) brightness(200%);
+            mix-blend-mode: color-dodge;
+        }
+
+        .mantra {
+            font-size: 1.2rem;
+            margin-bottom: 20px;
+        }
+
+        .name {
+            font-size: 2.5rem;
+            letter-spacing: 2px;
+            font-weight: bold;
+            text-transform: uppercase;
+        }
+
+        .divider {
+            width: 100px;
+            height: 2px;
+            background-color: white;
+            margin: 20px auto;
+        }
+
+        /* Tabs container styles */
+        .tabs {
+            display: flex;
+            justify-content: center;
+            margin-top: 30px;
+            gap: 20px;
+        }
+
+        .tab {
+            padding: 10px 20px;
+            border: 2px solid white;
+            border-radius: 20px;
+            cursor: pointer;
+            font-size: 1rem;
+            text-transform: uppercase;
+            transition: 0.3s;
+        }
+
+        .tab:hover {
+            background-color: white;
+            color: black;
+        }
+
+        .content-section {
+            display: none;
+            padding: 30px 5px;
+            max-width: 700px;
+            margin:  auto;
+            align-items: center;
+        }
+
+        .content-section.active {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 30px;
+            justify-content: space-between;
+        }
+
+        .info-column {
+            flex: 1 1 calc(40% - 10px);
+            font-size: 1.3rem;
+            line-height: 1.8;
+        }
+
+        .info-column p {
+            margin: 10px 0;
+        }
+
+        .footer {
+            text-align: center;
+            padding: 20px;
+            font-size: 1.2rem;
+            color: #ccc;
+        }
+
+        .back-btn {
+            display: block;
+            margin: 20px auto 0; /* Adjust the top margin to add space above */
+            padding: 10px 20px;
+            font-size: 1rem;
+            text-transform: uppercase;
+            color: black;
+            background-color: white;
+            border: none;
+            border-radius: 20px;
+            cursor: pointer;
+            position: absolute; /* Position the button at the bottom of the section */
+            bottom: 120px; /* Distance from the bottom edge of the section */
+            left: 50%; /* Center horizontally */
+            transform: translateX(-50%); /* Offset to perfectly center */
+            z-index: 10; /* Ensure the button appears above other content */
+        }
+
+        .image-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+        .image {
+            max-width: 250px;
+            max-height: 250px;
+            object-fit: cover;
+            cursor: pointer;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .image:hover {
+            transform: scale(1.05);
+            box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2);
+        }
+
+        /* Theater Mode (Fullscreen View) */
+        .theater-mode {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.9);
+            justify-content: center;
+            align-items: center;
+            z-index: 1000;
+        }
+        .theater-mode img {
+            max-width: 90%;
+            max-height: 90%;
+            border-radius: 10px;
+            box-shadow: 0 8px 12px rgba(255, 255, 255, 0.2);
+        }
+
+        .close-btn {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            font-size: 2rem;
+            color: white;
+            background: none;
+            border: none;
+            cursor: pointer;
+            z-index: 1001;
+        }
+
+        @media (max-width: 768px) {
+            .info-column {
+                flex: 1 1 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Hero Section -->
+    <div class="hero">
+        <img src="D:\divya\marriage page\asset\a0860bdf5a25c7f1bd4927f630091da2.jpg" alt="Lord Ganesha" class="ganesha-logo">
+        <div id="hero">
+        <p class="mantra">|| శ్రీ గణేశాయ నమః ||</p>
+        <h1 class="name">కాండ్రేగుల దివ్య తేజస్వి</h1>
+          <div class="image-container">
+            <img 
+            src="D:\divya\marriage page\asset\div2.jpg" 
+            alt="Divya" 
+            class="image" 
+            onclick="openTheaterMode(this.src)" 
+            style="width: 300px; height: 300px; border-radius: 50%; object-fit: cover; border: 2px solid white;"
+            >
+          </div>
+        </div>
+        <div class="divider"></div>
+
+        <!-- Tabs -->
+        <div class="tabs">
+            <div class="tab" onclick="showTab('personal')">వ్యక్తిగత వివరాలు</div>
+            <div class="tab" onclick="showTab('family')">కుటుంబ వివరాలు</div>
+            <div class="tab" onclick="showTab('contact')">సంప్రదింపు</div>
+            <div class="tab" onclick="showTab('Images')">చిత్రాలు</div>
+        </div>
+    </div>
+
+    <div class="theater-mode" id="theaterMode">
+        <button class="close-btn" onclick="closeTheaterMode()">&times;</button>
+        <img id="theaterImage" src="" alt="Theater Mode Image">
+    </div>
+
+    <div class="details">
+        <!-- Personal Details -->
+        <div id="personal" class="content-section">
+            <div class="info-column">
+                <p><strong>పూర్తి పేరు:</strong> కాండ్రేగుల దివ్య తేజస్వి</p>
+                <p><strong>విద్యాభ్యాసం:</strong> ఎమ్‌బి‌ఎ</p>
+                <p><strong>వృత్తి:</strong> ఫైనాన్షియల్ అనలిస్టు</p>
+                <p><strong>పనిచేసే స్థలం:</strong> స్టేట్ స్ట్రీట్, చెన్నై</p>
+                <p><strong>కులం:</strong> శెట్టిబలిజ</p>
+            </div>
+            <div class="info-column">
+                <p><strong>జన్మతేది:</strong> 07/09/1998</p>
+                <p><strong>జన్మస్థలం:</strong> రాజోలు</p>
+                <p><strong>నక్షత్రం:</strong> ఉత్తరాభాద్ర</p>
+                <p><strong>పాదం:</strong> 1</p>
+                <p><strong>రాశి:</strong> మీన</p>
+                <p><strong>ఎత్తు:</strong> 5’ 4”</p>
+                <p><strong>రంగు:</strong> చామనచాయ</p>
+            </div>
+            <button class="back-btn" onclick="goToHome()">వెనుకకు</button>
+        </div>
+
+        <!-- Family Details -->
+        <div id="family" class="content-section">
+            <div class="info-column">
+                <p><strong>తండ్రి పేరు:</strong> రాము (వ్యాపారం)</p>
+                <p><strong>తల్లి పేరు:</strong> భవానీ లావణ్య (గృహిణి)</p>
+                <p><strong>తాతయ్య:</strong> (లేట్) మాధవరావు</p>
+            </div>
+            <div class="info-column">
+                <p><strong>నాన్నమ్మ:</strong> (లేట్) అలివేలమ్మ</p>
+                <p><strong>తమ్ముడు:</strong> 1</p>
+                <p><strong>స్వస్థలం:</strong> రాజోలు</p>
+                <p><strong>జిల్లా:</strong> అంబేద్కర్ కొనసీమ</p>
+                <p><strong>ప్రస్తుతం నివాసం:</strong> రాజోలు</p>
+            </div>
+            <button class="back-btn" onclick="goToHome()">వెనుకకు</button>
+        </div>
+
+        <!-- Contact Details -->
+        <div id="contact" class="content-section">
+            <div class="info-column">
+                <p><strong>తండ్రి నంబర్:</strong> <a href="tel:8008809999" style="color: white; text-decoration: underline;">8008809999</a></p>
+            </div>
+            <button class="back-btn" onclick="goToHome()">వెనుకకు</button>
+        </div>
+
+        <!-- Image Details -->
+        <div id="Images" class="content-section">
+        <div class="image-container"  >
+            <img src="D:\divya\marriage page\asset\div1.jpg" alt="Divya" class="image" onclick="openTheaterMode(this.src)">
+            <img src="D:\divya\marriage page\asset\div2.jpg" alt="Divya" class="image" onclick="openTheaterMode(this.src)">
+        </div>
+        <button class="back-btn" onclick="goToHome()">వెనుకకు</button>
+        </div>
+    </div>
+
+    <script>
+         function openTheaterMode(imageSrc) {
+            const theaterMode = document.getElementById('theaterMode');
+            const theaterImage = document.getElementById('theaterImage');
+            theaterImage.src = imageSrc;
+            theaterMode.style.display = 'flex';
+        }
+
+        function closeTheaterMode() {
+            const theaterMode = document.getElementById('theaterMode');
+            theaterMode.style.display = 'none';
+        }
+
+        function showTab(tabId) {
+            // Hide the hero section
+            document.getElementById('hero').style.display = 'none';
+
+            // Hide all content sections
+            document.querySelectorAll('.content-section').forEach(section => section.classList.remove('active'));
+
+            // Show the selected tab's content
+            document.getElementById(tabId).classList.add('active');
+        }
+
+        function goToHome() {
+            // Show the hero section
+            document.getElementById('hero').style.display = 'block';
+
+            // Hide all content sections
+            document.querySelectorAll('.content-section').forEach(section => section.classList.remove('active'));
+        }
+    </script>
+</body>
+</html>
